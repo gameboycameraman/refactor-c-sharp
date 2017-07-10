@@ -11,7 +11,6 @@ namespace AddressProcessing.CSV
     public class CSVReaderWriter
     {
         private StreamReader _readerStream = null;
-        private StreamWriter _writerStream = null;
 
         [Flags]
         public enum Mode { Read = 1, Write = 2 };
@@ -31,22 +30,6 @@ namespace AddressProcessing.CSV
             {
                 throw new Exception("Unknown file mode for " + fileName);
             }
-        }
-
-        public void Write(params string[] columns)
-        {
-            string outPut = "";
-
-            for (int i = 0; i < columns.Length; i++)
-            {
-                outPut += columns[i];
-                if ((columns.Length - 1) != i)
-                {
-                    outPut += "\t";
-                }
-            }
-
-            WriteLine(outPut);
         }
 
         public bool Read(string column1, string column2)
@@ -114,11 +97,6 @@ namespace AddressProcessing.CSV
 
                 return true;
             }
-        }
-
-        private void WriteLine(string line)
-        {
-            _writerStream.WriteLine(line);
         }
 
         private string ReadLine()
