@@ -11,6 +11,13 @@ namespace AddressProcessing.CSV
     public class CSVReaderWriter
     {
 
+        private readonly CSVWriter _writer;
+
+        public CSVReaderWriter(CSVWriter argWriter)
+        {
+            _writer = argWriter;
+        }
+
         [Flags]
         public enum Mode { Read = 1, Write = 2 };
 
@@ -23,7 +30,7 @@ namespace AddressProcessing.CSV
             else if (mode == Mode.Write)
             {
                 FileInfo fileInfo = new FileInfo(fileName);
-                _writerStream = fileInfo.CreateText();
+                _writer.writerStream = fileInfo.CreateText();
             }
             else
             {
@@ -33,9 +40,9 @@ namespace AddressProcessing.CSV
 
         public void Close()
         {
-            if (_writerStream != null)
+            if (_writer.writerStream != null)
             {
-                _writerStream.Close();
+                _writer.writerStream.Close();
             }
 
             if (_readerStream != null)

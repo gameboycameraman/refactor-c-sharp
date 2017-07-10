@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace AddressProcessing
 {
     class CSVWriter
     {
 
-        public StreamWriter _writerStream = null;
+        public StreamWriter writerStream = null;
 
         public void Write(params string[] columns)
         {
@@ -29,7 +26,7 @@ namespace AddressProcessing
 
         public void WriteLine(string line)
         {
-            _writerStream.WriteLine(line);
+            writerStream.WriteLine(line);
         }
     }
 }
