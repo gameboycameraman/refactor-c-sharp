@@ -8,7 +8,6 @@ namespace AddressProcessing
 {
     class CSVReader
     {
-
         public StreamReader _readerStream = null;
 
         public bool Read(out string column1, out string column2)
