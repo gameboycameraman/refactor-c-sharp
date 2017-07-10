@@ -8,9 +8,9 @@ namespace AddressProcessing.CSV
 
         Please leave the rest of this file as it is so we can discuss your concerns during the next stage of the interview process.
         
-        *)
-        *)
-        *)
+        *)The Single Responsibility Priniciple is not respected here. Write and Read functions should be in different files.
+        *)We could DRY this code, some sections are repeated and could be improved.
+        *)Close should not be a public function.
     */
 
     public class CSVReaderWriterForAnnotation
