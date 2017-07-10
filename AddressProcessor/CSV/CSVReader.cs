@@ -16,7 +16,7 @@ namespace AddressProcessing
             string line = ReadLine();
             string[] columns = line.Split(separator);
 
-            if (line == null)
+            if (line == null || columns.Length == 0)
             {
                 column1 = null;
                 column2 = null;
@@ -24,13 +24,6 @@ namespace AddressProcessing
                 return false;
             }
 
-            if (columns.Length == 0)
-            {
-                column1 = null;
-                column2 = null;
-
-                return false;
-            } 
             else
             {
                 column1 = columns[FIRST_COLUMN];
