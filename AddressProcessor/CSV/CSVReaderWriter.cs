@@ -8,7 +8,7 @@ namespace AddressProcessing.CSV
            Assume this code is in production and backwards compatibility must be maintained.
     */
 
-    public class CSVReaderWriter
+    class CSVReaderWriter
     {
 
         private readonly CSVWriter _writer;

@@ -11,6 +11,7 @@ namespace AddressProcessing.CSV
         *)The Single Responsibility Priniciple is not respected here. Write and Read functions should be in different files.
         *)We could DRY this code, some sections are repeated and could be improved.
         *)Close should not be a public function.
+        *)Naming could be improved.
     */
 
     public class CSVReaderWriterForAnnotation
