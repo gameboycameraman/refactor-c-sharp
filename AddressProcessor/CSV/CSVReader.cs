@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace AddressProcessing
 {
     class CSVReader
     {
-        public StreamReader _readerStream = null;
+        public StreamReader readerStream = null;
 
         public bool Read(out string column1, out string column2)
         {
@@ -45,7 +42,7 @@ namespace AddressProcessing
 
         public string ReadLine()
         {
-            return _readerStream.ReadLine();
+            return readerStream.ReadLine();
         }
     }
 }

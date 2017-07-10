@@ -12,10 +12,12 @@ namespace AddressProcessing.CSV
     {
 
         private readonly CSVWriter _writer;
+        private readonly CSVReader _reader;
 
-        public CSVReaderWriter(CSVWriter argWriter)
+        public CSVReaderWriter(CSVWriter argWriter, CSVReader argReader)
         {
             _writer = argWriter;
+            _reader = argReader;
         }
 
         [Flags]
@@ -25,7 +27,7 @@ namespace AddressProcessing.CSV
         {
             if (mode == Mode.Read)
             {
-                _readerStream = File.OpenText(fileName);
+                _reader.readerStream = File.OpenText(fileName);
             }
             else if (mode == Mode.Write)
             {
@@ -45,9 +47,9 @@ namespace AddressProcessing.CSV
                 _writer.writerStream.Close();
             }
 
-            if (_readerStream != null)
+            if (_reader.readerStream != null)
             {
-                _readerStream.Close();
+                _reader.readerStream.Close();
             }
         }
     }
